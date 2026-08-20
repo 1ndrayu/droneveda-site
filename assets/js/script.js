@@ -24,9 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Smooth scroll for nav links
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      e.preventDefault();
       const targetId = this.getAttribute('href');
+      
+      // Only prevent default and smooth scroll if it's an anchor link on the same page
       if (targetId && targetId.startsWith('#')) {
+        e.preventDefault();
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           window.scrollTo({
@@ -34,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
           });
         }
+      } else if (targetId && targetId.includes('.html#')) {
+        // If it's a link to another page's anchor, we let it navigate naturally.
+        // No e.preventDefault() here.
       }
     });
   });
@@ -61,5 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach((element) => {
     revealObserver.observe(element);
   });
+
+  // Pre-fill contact form based on URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const product = urlParams.get('product');
+  if (product) {
+    const msgBox = document.querySelector('textarea[name="message"]');
+    if (msgBox) {
+      msgBox.value = "I am interested in purchasing the " + product + " kit. Please contact me with pricing and availability.";
+    }
+
+    // Scroll to contact form smoothly if product is in URL
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      setTimeout(() => {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
+    }
+  }
 
 });

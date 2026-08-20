@@ -3,14 +3,14 @@
   --bg-secondary: #0a0a0a;
   --bg-tertiary: #0a0a0a;
   --bg-alt: ;
-  --logo-green: #10b981; 
+  --logo-green: #059669; 
   
   --text-primary: #ffffff;
   --text-secondary: #e2e8f0;
   --text-muted: #8e8e93;
   
   --accent-color: var(--logo-green);
-  --accent-hover: #059669;
+  --accent-hover: #047857;
   
   --border-color: #222222;
   --border-hover: #333333;
@@ -488,7 +488,8 @@ a {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   margin-top: 50px;
-  height: 200px;
+  height: auto;
+  min-height: 200px;
 }
 
 .project-image-wrapper {
@@ -545,7 +546,8 @@ a {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   padding: 28px;
-  height: 150px;
+  min-height: 150px;
+  height: auto;
 }
 
 .trust-title {
@@ -612,65 +614,120 @@ a {
   border-color: var(--logo-green);
 }
 
-.footer {
+.modern-footer {
   background-color: #ffffff;
-  padding: 80px 0 40px;
+  color: #111111;
+  padding: 80px 0 32px;
+  font-family: var(--font-family);
+  overflow: hidden;
 }
 
-.footer-container {
+.footer-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 80px;
   flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 60px;
 }
 
-.footer-logo {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--bg-primary);
+.footer-tagline-huge {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 100%;
+  color: #111111;
+}
+
+.footer-links-grid {
+  display: flex;
+  gap: 100px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #555555;
   margin-bottom: 8px;
-  letter-spacing: 2px;
 }
 
-.footer-tagline {
-  font-size: 0.85rem;
-  color: var(--bg-secondary);
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.footer-link {
+  font-size: 0.95rem;
   font-weight: 500;
-  opacity: 0.7;
+  color: #111111;
+  transition: opacity 0.2s;
 }
 
-.footer-bottom {
+.footer-link:hover {
+  opacity: 0.6;
+}
+
+.footer-middle {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.huge-footer-text {
+  font-size: 10.5vw;
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  color: #111111;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.footer-bottom-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 40px;
-  border-top: 1px solid var(--bg-primary);
-  border-opacity: 0.2;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
 }
 
-.copyright, .disclaimer {
-  font-size: 0.75rem;
-  color: var(--bg-tertiary);
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.footer-legal-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-link-small {
+  font-size: 0.85rem;
   font-weight: 500;
-  opacity: 0.7;
+  color: #666666;
+}
+
+.footer-link-small:hover {
+  color: #111111;
 }
 
 @media (max-width: 768px) {
-  .footer-container {
+  .footer-top {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
+    gap: 48px;
   }
-  
-  .footer-bottom {
+  .footer-links-grid {
+    gap: 48px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .huge-footer-text {
+    font-size: 16vw;
+  }
+  .footer-bottom-bar {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -687,13 +744,12 @@ a {
 .tier-features li::before { content: ''; position: absolute; left: 0; top: 3px; width: 14px; height: 14px; background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238e8e93' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E"); background-size: contain; background-repeat: no-repeat; }
 
 .tier-card {
-  background-color: var(--bg-secondary) !important;
-  border: 1px solid transparent !important;
+  background-color: var(--bg-secondary);
+  border: 1px solid transparent;
 }
 
 .trust-box, .tier-card, .project-card, .nav-grid-card {
-  background: #000000 !important;
-  background-color: #000000 !important;
+  /* removed rigid black background overrides so glass-card styling works */
 }
 
 .contact-section {
