@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "droneveda-web"
-  }
+  },
+  "targets": {
+    "droneveda-web": {
+      "hosting": {
+        "droneveda-site": [
+          "droneveda"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

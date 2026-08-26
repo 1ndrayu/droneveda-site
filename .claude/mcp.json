@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "gitpeak": {
+      "command": "node",
+      "args": [
+        "c:\\Users\\indra\\.antigravity-ide\\extensions\\notifyx.gitpeak-4.0.12-universal\\dist\\mcp-server.js"
+      ],
+      "description": "GitPeak Suite — git context for AI agents"
+    }
+  }
+}

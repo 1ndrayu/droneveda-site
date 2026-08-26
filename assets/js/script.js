@@ -73,7 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (product) {
     const msgBox = document.querySelector('textarea[name="message"]');
     if (msgBox) {
-      msgBox.value = "I am interested in purchasing the " + product + " kit. Please contact me with pricing and availability.";
+      if (product.includes("Workshop")) {
+        msgBox.value = `I am interested in enrolling in the ${product}. Please contact me with details.`;
+      } else {
+        msgBox.value = `I am interested in the ${product}. Please contact me with pricing and availability.`;
+      }
     }
 
     // Scroll to contact form smoothly if product is in URL
@@ -83,6 +87,23 @@ document.addEventListener('DOMContentLoaded', () => {
         contactSection.scrollIntoView({ behavior: 'smooth' });
       }, 500);
     }
+  }
+
+  // Navbar scroll effect for the homepage
+  const navbarHome = document.querySelector('.navbar-home');
+  const heroSection = document.querySelector('.hero-section');
+  if (navbarHome && heroSection) {
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) {
+        navbarHome.classList.add('scrolled');
+      } else {
+        navbarHome.classList.remove('scrolled');
+      }
+    }, {
+      rootMargin: '-80px 0px 0px 0px',
+      threshold: 0
+    });
+    observer.observe(heroSection);
   }
 
 });

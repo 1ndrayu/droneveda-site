@@ -33,7 +33,7 @@
         <a href="../index.html" class="nav-link">HOME</a>
         <a href="workshops.html" class="nav-link active">WORKSHOPS</a>
         <a href="products.html" class="nav-link">PRODUCTS</a>
-        <a href="gallery.html" class="nav-link">GALLERY</a>
+        <a href="#" class="nav-link" onclick="alert('Checkout is temporarily disabled.'); return false;" style="opacity: 0.5; pointer-events: none;">CART (<span id="cart-count">0</span>)</a>
         <a href="about.html" class="nav-link">ABOUT</a>
         <a href="../index.html#contact" class="btn">REQUEST QUOTE</a>
       </nav>
@@ -43,11 +43,13 @@
   <div class="noise-overlay"></div>
 
   <main style="position: relative; overflow-x: clip;">
-<div>
+    <div>
 
       <section id="workshops" class="section orb-section"
         style="padding-top: 180px; padding-bottom: 180px; position: relative;">
-        <div class="reveal" style="position: absolute; top: 30%; left: -5%; font-size: 15rem; font-family: var(--font-serif); font-weight: 700; color: rgba(255,255,255,0.02); z-index: 0; white-space: nowrap; pointer-events: none;">EDUCATION</div>
+        <div class="reveal"
+          style="position: absolute; top: 30%; left: -5%; font-size: 15rem; font-family: var(--font-serif); font-weight: 700; color: rgba(255,255,255,0.02); z-index: 0; white-space: nowrap; pointer-events: none;">
+          EDUCATION</div>
 
 
         <div class="container">
@@ -74,8 +76,12 @@
                   <li>Take-home drone included</li>
                 </ul>
                 <div class="tier-footer" style="margin-top: 24px; font-size: 1.5rem; font-weight: 700;">
-                  <span class="price">₹2,999 <span
-                      style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/ person</span></span>
+                  <span class="price">₹2,999<span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/
+                      person</span></span>
+                </div>
+                <div style="margin-top: auto; padding-top: 24px;">
+                  <a href="../index.html?product=Build %26 Fly Workshop#contact" class="btn btn-outline"
+                    style="width: 100%; text-align: center; display: block;">INQUIRE</a>
                 </div>
               </div>
             </div>
@@ -98,6 +104,10 @@
                   <span class="price">₹5,999 <span
                       style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/ person</span></span>
                 </div>
+                <div style="margin-top: auto; padding-top: 24px;">
+                  <a href="../index.html?product=Tune %26 Control Workshop#contact" class="btn btn-outline"
+                    style="width: 100%; text-align: center; display: block;">INQUIRE</a>
+                </div>
               </div>
             </div>
 
@@ -119,19 +129,24 @@
                   <span class="price">₹15,999 <span
                       style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/ person</span></span>
                 </div>
+                <div style="margin-top: auto; padding-top: 24px;">
+                  <a href="../index.html?product=Autonomous UAVs Workshop#contact" class="btn btn-outline"
+                    style="width: 100%; text-align: center; display: block;">INQUIRE</a>
+                </div>
               </div>
             </div>
           </div>
       </section>
       <div class="page-navigation"
         style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
-        <a href="../index.html" class="btn" style="background: transparent; border: 1px solid var(--border-color);">&larr;
+        <a href="../index.html" class="btn"
+          style="background: transparent; border: 1px solid var(--border-color);">&larr;
           PREV: HOME</a>
         <a href="products.html" class="btn"
-          style="background: transparent; border: 1px solid var(--border-color);">NEXT: CUSTOM BUILDS &rarr;</a>
+          style="background: transparent; border: 1px solid var(--border-color);">NEXT: PRODUCTS &rarr;</a>
       </div>
 
-                  <footer class="modern-footer">
+      <footer class="modern-footer">
         <div class="footer-top container">
           <div class="footer-brand" style="display: flex; flex-direction: column; gap: 10px;">
             <h1 class="huge-footer-text" style="font-size: 8vw; margin-bottom: 0; margin-top: -10px;">DRONE VEDA</h1>
@@ -145,26 +160,25 @@
               <a href="../index.html" class="footer-link">Home</a>
               <a href="workshops.html" class="footer-link">Workshops</a>
               <a href="products.html" class="footer-link">Products</a>
-              <a href="gallery.html" class="footer-link">Gallery</a>
               <a href="about.html" class="footer-link">About</a>
             </div>
-                        <div class="footer-column">
+            <div class="footer-column">
               <h4 class="footer-col-title">Services</h4>
-              <a href="products.html" class="footer-link">Custom Builds</a>
-              <a href="products.html" class="footer-link">Drone Kits</a>
+              <a href="products.html" class="footer-link">Products</a>
               <a href="workshops.html" class="footer-link">Training</a>
             </div>
           </div>
         </div>
 
-        
+
 
         <div class="footer-bottom-bar container">
           <div style="display: flex; flex-direction: column; gap: 4px;">
             <a href="../index.html" class="footer-logo-small">
-            <img src="../assets/img/logo-footer.png" alt="Drone Veda" style="height: 64px;">
-          </a>
-            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">CIN: U71100MR2026OPC476801</span>
+              <img src="../assets/img/logo-footer.png" alt="Drone Veda" style="height: 64px;">
+            </a>
+            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">CIN:
+              U71100MR2026OPC476801</span>
           </div>
           <div class="footer-legal-links">
             <a href="about.html" class="footer-link-small">About Drone Veda</a>
@@ -181,3 +195,5 @@
 </body>
 
 </html>
+
+
