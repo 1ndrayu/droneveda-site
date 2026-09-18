@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRONE VEDA | Checkout</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-text">DRONE VEDA</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <a href="checkout.html" class="mobile-cart"
+          style="color: white; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="../index.html" class="nav-link">HOME</a>
+        <a href="workshops.html" class="nav-link">WORKSHOPS</a>
+        <a href="products.html" class="nav-link">PRODUCTS</a>
+        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="checkout.html" class="nav-link active">CART (<span id="cart-count">0</span>)</a>
+        <a href="../index.html#contact" class="btn">REQUEST QUOTE</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="noise-overlay"></div>
+
+  <main
+    style="position: relative; overflow-x: clip; padding-top: 150px; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+    <div class="container"
+      style="text-align: center; max-width: 600px; padding: 40px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+      <div style="font-size: 5rem; margin-bottom: 20px; animation: float 3s ease-in-out infinite;">🛸</div>
+      <h1 style="font-family: var(--font-family); font-size: 2.5rem; margin-bottom: 20px; color: var(--text-primary);">
+        Whoops! Our store is on a coffee break! ☕</h1>
+      <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.6;">
+        Looks like we're currently taking a breather from accepting new orders via website. Even the best tech needs to
+        recharge its
+        batteries! <br><br>
+        In the meantime, feel free to browse our fleet or drop us a message. We'll be back in the air soon! ❤️
+      </p>
+      <a href="products.html" class="btn" style="padding: 15px 40px; font-size: 1.1rem;">Explore Products</a>
+    </div>
+  </main>
+
+  <footer class="modern-footer">
+    <div class="footer-bottom-bar container">
+      <div style="display: flex; flex-direction: column; gap: 4px;">
+        <a href="../index.html" class="footer-logo-small">
+          <img src="../assets/img/logo-footer.png" alt="Drone Veda" style="height: 64px;">
+        </a>
+      </div>
+      <div class="footer-legal-links">
+        <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Secured Checkout</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/cart.js"></script>
+  <style>
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+  </style>
+</body>
+
+</html>

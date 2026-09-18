@@ -106,8 +106,8 @@ function renderAllCartControls() {
         
         if (qty === 0) {
             container.innerHTML = `
-                <button onclick="updateQuantity('${productName}', ${price}, 1)" class="btn"
-                        style="width: 100%; text-align: center; display: block; border: none; cursor: pointer;">
+                <button onclick="let btn = this; btn.style.transform='scale(0.85)'; setTimeout(() => { btn.style.transform='scale(1)'; setTimeout(() => updateQuantity('${productName}', ${price}, 1), 150); }, 150);" class="btn"
+                        style="width: 100% !important; text-align: center; display: block; border: none; cursor: pointer; transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
                     ADD TO CART
                 </button>
             `;
