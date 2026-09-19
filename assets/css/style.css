@@ -1336,4 +1336,28 @@ header.navbar.navbar-home.scrolled {
   .footer-top {
     gap: 32px;
   }
+
+  /* Invoice Mobile Styles */
+  .invoice-table-header {
+    display: none;
+  }
+  .invoice-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 24px 0;
+  }
+  .invoice-col-right {
+    text-align: left;
+  }
+  .invoice-row > div:nth-child(2) {
+    margin-bottom: 8px;
+  }
+  .invoice-row > div:nth-child(3)::before {
+    content: "Price: ";
+    color: var(--text-muted);
+  }
+  .invoice-row > div:nth-child(4)::before {
+    content: "Total: ";
+    color: var(--text-muted);
+  }
 }

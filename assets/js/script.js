@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Intersection Observer for cleanly revealing and hiding elements via scrolling
   const revealOptions = {
     root: null,
-    rootMargin: '0px 0px -10% 0px', // Animates slightly before hitting the edge of the screen
-    threshold: 0.1 
+    rootMargin: '0px 0px 0px 0px', // Animates without needing much scroll
+    threshold: 0 
   };
 
   const revealObserver = new IntersectionObserver((entries) => {
