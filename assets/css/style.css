@@ -878,7 +878,7 @@ header.navbar.navbar-home.scrolled {
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
   will-change: opacity, transform;
 }
 
@@ -890,46 +890,46 @@ header.navbar.navbar-home.scrolled {
 .reveal-group .reveal-item {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
   will-change: opacity, transform;
 }
 
 .reveal-group.visible .reveal-item {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
 .reveal-group.visible .reveal-item:nth-child(1) {
-  transition-delay: 0.1s;
+  transition-delay: 0.05s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(2) {
-  transition-delay: 0.3s;
+  transition-delay: 0.1s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(3) {
-  transition-delay: 0.5s;
+  transition-delay: 0.15s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(4) {
-  transition-delay: 0.7s;
+  transition-delay: 0.2s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(5) {
-  transition-delay: 0.9s;
+  transition-delay: 0.25s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(6) {
-  transition-delay: 1.1s;
+  transition-delay: 0.3s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(7) {
-  transition-delay: 1.3s;
+  transition-delay: 0.35s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(8) {
-  transition-delay: 1.5s;
+  transition-delay: 0.4s;
 }
 
 .mobile-cart {
@@ -1293,5 +1293,47 @@ header.navbar.navbar-home.scrolled {
   .invoice-summary-total {
     border-top: 1px solid #000 !important;
     color: #000 !important;
+  }
+}
+
+/* --- MOBILE RESPONSIVENESS TWEAKS --- */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-badge {
+    font-size: 1.1rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    letter-spacing: -0.01em;
+  }
+  .bg-watermark-text {
+    font-size: 6rem;
+    top: 25%;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .section {
+    padding: 60px 0;
+  }
+  .projects-grid, .about-grid, .contact-grid {
+    gap: 24px !important;
+  }
+  .form-row-2col {
+    grid-template-columns: 1fr;
+  }
+  .trust-box.glass-card, .form-wrapper.glass-card {
+    padding: 24px;
+  }
+  .gallery-accordion {
+    height: 300px;
+  }
+  .footer-links-grid {
+    gap: 32px !important;
+  }
+  .footer-top {
+    gap: 32px;
   }
 }
