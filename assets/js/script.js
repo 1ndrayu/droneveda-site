@@ -105,5 +105,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     observer.observe(heroSection);
   }
+  // P19: 3D Tilt Card Logic
+  const tiltCards = document.querySelectorAll('.tier-card, .trust-box');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const xNorm = (x / rect.width) * 2 - 1;
+      const yNorm = (y / rect.height) * 2 - 1;
+      
+      const maxRotate = 6; // max degrees of rotation
+      const rx = yNorm * -maxRotate;
+      const ry = xNorm * maxRotate;
+      
+      const gx = (x / rect.width) * 100;
+      const gy = (y / rect.height) * 100;
+      
+      card.style.setProperty('--p19-rx', `${rx}deg`);
+      card.style.setProperty('--p19-ry', `${ry}deg`);
+      card.style.setProperty('--p19-gx', `${gx}%`);
+      card.style.setProperty('--p19-gy', `${gy}%`);
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--p19-rx', `0deg`);
+      card.style.setProperty('--p19-ry', `0deg`);
+    });
+  });
 
 });

@@ -889,37 +889,67 @@ header.navbar.navbar-home.scrolled {
    SCROLL REVEAL ANIMATIONS 
    -------------------------------------- */
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-  will-change: opacity, transform;
+/* ============================================================ */
+/* Transitions.dev Integrations                                 */
+/* ============================================================ */
+:root {
+  /* P8 — Page slide */
+  --p8-slide-dur: 350ms;
+  --p8-fade-dur: 350ms;
+  --p8-distance: 8px;
+  --p8-blur: 3px;
+  --p8-slide-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --p8-fade-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* P15 — Beautiful shimmer on text */
+  --p15-dur: 2000ms;
+  --p15-base: rgba(255, 255, 255, 0.7);
+  --p15-highlight: #ffffff;
+  --p15-band: 400%;
+  --p15-ease: linear;
+
+  /* P19 — Tilt card */
+  --p19-perspective: 1000px;
+  --p19-return-dur: 1000ms;
+  --p19-return-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --p19-follow-dur: 400ms;
+  --p19-follow-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --p19-glare-opacity: 0.2;
+  --p19-glare-fade: 300ms;
+  --p19-glare-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* P24 — Chevron Hover */
+  --p24-shift: 4px;
+  --p24-in-dur: 350ms;
+  --p24-out-dur: 350ms;
+  --p24-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+/* P8: Page Slide Reveal */
+.reveal,
 .reveal-group .reveal-item {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-  will-change: opacity, transform;
+  transform: translateY(var(--p8-distance));
+  filter: blur(var(--p8-blur));
+  transition: opacity var(--p8-fade-dur) var(--p8-fade-ease),
+    transform var(--p8-slide-dur) var(--p8-slide-ease),
+    filter var(--p8-slide-dur) var(--p8-slide-ease);
+  will-change: opacity, transform, filter;
 }
 
+.reveal.visible,
 .reveal-group.visible .reveal-item {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  filter: blur(0);
 }
 
 .reveal-group.visible .reveal-item:nth-child(1) {
-  transition-delay: 0.05s;
+  transition-delay: 0.04s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(2) {
-  transition-delay: 0.1s;
+  transition-delay: 0.09s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(3) {
@@ -927,23 +957,53 @@ header.navbar.navbar-home.scrolled {
 }
 
 .reveal-group.visible .reveal-item:nth-child(4) {
-  transition-delay: 0.2s;
+  transition-delay: 0.22s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(5) {
-  transition-delay: 0.25s;
+  transition-delay: 0.30s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(6) {
-  transition-delay: 0.3s;
+  transition-delay: 0.39s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(7) {
-  transition-delay: 0.35s;
+  transition-delay: 0.49s;
 }
 
 .reveal-group.visible .reveal-item:nth-child(8) {
-  transition-delay: 0.4s;
+  transition-delay: 0.60s;
+}
+
+/* P15: Shimmer */
+
+
+/* P19: Tilt Card Base */
+.tier-card,
+.trust-box {
+  transition: transform var(--p19-return-dur) var(--p19-return-ease);
+  transform-style: preserve-3d;
+  perspective: var(--p19-perspective);
+}
+
+.tier-card:hover,
+.trust-box:hover {
+  transition: transform var(--p19-follow-dur) var(--p19-follow-ease);
+  transform: rotateX(var(--p19-rx, 0deg)) rotateY(var(--p19-ry, 0deg));
+}
+
+
+
+/* P24: Chevron Hover */
+.btn svg,
+.cart-controls svg {
+  transition: transform var(--p24-in-dur) var(--p24-ease);
+}
+
+.btn:hover svg,
+.cart-controls:hover svg {
+  transform: translateX(var(--p24-shift));
 }
 
 .mobile-cart {

@@ -10,6 +10,71 @@ function updateCartBadge() {
     if (cartCountElement) {
         cartCountElement.innerText = totalItems;
     }
+    
+    updateFloatingCart(totalItems);
+}
+
+// Function to manage floating cart button
+function updateFloatingCart(totalItems) {
+    let fab = document.getElementById('floating-cart-btn');
+
+    if (totalItems > 0) {
+        if (!fab) {
+            fab = document.createElement('a');
+            fab.id = 'floating-cart-btn';
+            fab.href = '/pages/checkout.html';
+            
+            fab.innerHTML = `
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span id="floating-cart-count" style="position: absolute; top: -2px; right: -2px; background: var(--logo-green, #00C853); color: white; border-radius: 50%; min-width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; border: 2px solid #111;">${totalItems}</span>
+            `;
+            
+            Object.assign(fab.style, {
+                position: 'fixed',
+                bottom: '30px',
+                right: '30px',
+                width: '60px',
+                height: '60px',
+                backgroundColor: '#ffffff',
+                color: '#000000',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
+                zIndex: '9998',
+                transition: 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s',
+                transform: 'scale(0)',
+                opacity: '0',
+                textDecoration: 'none'
+            });
+
+            fab.onmouseover = () => { fab.style.transform = 'scale(1.1)'; };
+            fab.onmouseout = () => { fab.style.transform = 'scale(1)'; };
+
+            document.body.appendChild(fab);
+            
+            setTimeout(() => {
+                fab.style.transform = 'scale(1)';
+                fab.style.opacity = '1';
+            }, 10);
+        } else {
+            const countElement = document.getElementById('floating-cart-count');
+            if (countElement) {
+                countElement.innerText = totalItems;
+            }
+        }
+    } else {
+        if (fab) {
+            fab.style.transform = 'scale(0)';
+            fab.style.opacity = '0';
+            setTimeout(() => fab.remove(), 300);
+        }
+    }
 }
 
 // Custom Toast Notification
