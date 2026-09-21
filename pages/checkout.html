@@ -54,58 +54,69 @@
 
   <main style="position: relative; overflow-x: clip; padding-top: 150px; min-height: 80vh;">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header reveal" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <img src="../assets/img/logo%20-%20Copy.png" alt="Drone Veda Official Invoice" style="max-height: 80px; margin-bottom: 20px;">
         <h2 class="section-title">YOUR CART</h2>
         <p class="section-desc">Review your items and proceed to secure checkout.</p>
       </div>
 
-      <div class="invoice-card" style="margin-bottom: 60px;">
-        <div class="invoice-header">
-          <div>
-            <h2 class="invoice-header-title">DEMO INVOICE</h2>
-            <div style="color: var(--text-muted); font-size: 0.85rem;">Drone Veda</div>
-          </div>
-          <div class="invoice-meta">
-            <span id="invoice-date">DATE: </span>
-          </div>
-        </div>
-
-        <div class="invoice-table-header">
-          <div>DESCRIPTION</div>
-          <div class="invoice-col-right">QTY</div>
-          <div class="invoice-col-right">PRICE</div>
-          <div class="invoice-col-right">AMOUNT</div>
-        </div>
-
+      <div class="billing-card" id="billing-container" style="margin-bottom: 20px;">
+        <div class="billing-header">BILL DETAILS</div>
         <div id="cart-items-container">
           <!-- Cart items will be injected here via JS -->
         </div>
-
+        <hr class="dashed-divider" id="cart-divider" style="display:none;">
         <div id="cart-summary-container">
           <!-- Summary injected here -->
         </div>
+      </div>
 
-        <div style="margin-top: 40px; text-align: right; display: flex; justify-content: flex-end; gap: 15px;">
-          <button id="print-button" class="btn btn-outline"
-            style="padding: 15px 40px; font-size: 1.1rem; cursor: pointer; display: none; font-family: var(--font-mono);"
-            onclick="window.print()">PRINT INVOICE</button>
-          <button id="rzp-button" class="btn"
-            style="padding: 15px 40px; font-size: 1.1rem; cursor: pointer; border:none; display: none; font-family: var(--font-mono);">AUTHORIZE
-            PAYMENT &rarr;</button>
-        </div>
+      <div style="display: flex; gap: 15px; margin-top: 30px; margin-bottom: 80px; padding-bottom: 20px;">
+        <button class="btn" style="flex: 1; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);" onclick="window.print()">PRINT INVOICE</button>
+        <button class="btn btn-primary" style="flex: 2;" onclick="window.location.href='payment-unavailable.html'">PAY NOW</button>
       </div>
     </div>
   </main>
 
+
+
   <footer class="modern-footer">
+    <div class="footer-top container">
+      <div class="footer-brand">
+        <h1 class="huge-footer-text">DRONE VEDA</h1>
+        <div class="footer-tagline-huge">
+          Intelligence in every flight
+        </div>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-column">
+          <h4 class="footer-col-title">Navigation</h4>
+          <a href="../index.html" class="footer-link">Home</a>
+          <a href="workshops.html" class="footer-link">Workshops</a>
+          <a href="products.html" class="footer-link">Products</a>
+          <a href="about.html" class="footer-link">About</a>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-col-title">Services</h4>
+          <a href="products.html" class="footer-link">Products</a>
+          <a href="workshops.html" class="footer-link">Training</a>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-bottom-bar container">
-      <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div class="footer-logo-wrapper">
         <a href="../index.html" class="footer-logo-small">
-          <img src="../assets/img/logo-footer.png" alt="Drone Veda" style="height: 64px;">
+          <img src="../assets/img/logo-footer.png" alt="Drone Veda" class="footer-logo-img">
         </a>
+        <span class="footer-cin">CIN:
+          U71100MR2026OPC476801</span>
       </div>
       <div class="footer-legal-links">
-        <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">Secured Checkout</span>
+        <a href="about.html" class="footer-link-small">About Drone Veda</a>
+        <a href="privacy.html" class="footer-link-small">Privacy</a>
+        <a href="terms.html" class="footer-link-small">Terms</a>
+        <a href="../index.html#contact" class="footer-link-small">Contact</a>
       </div>
     </div>
   </footer>
@@ -117,31 +128,18 @@
     function renderCheckoutCart() {
       const cartContainer = document.getElementById('cart-items-container');
       const cartSummaryContainer = document.getElementById('cart-summary-container');
-      const rzpButton = document.getElementById('rzp-button');
+      const cartDivider = document.getElementById('cart-divider');
 
-      // Set invoice meta
-      let today = new Date();
-      document.getElementById('invoice-date').innerText = 'DATE: ' + today.toLocaleDateString('en-GB');
-
-      // Breakdown elements
       let currentCart = JSON.parse(localStorage.getItem('droneveda_cart')) || [];
       let subTotal = 0;
       let tax = 0; // Placeholder for taxes
       let discount = 0; // Placeholder for discounts
 
       if (currentCart.length === 0) {
-        cartContainer.innerHTML = '<div style="padding: 20px 0; color: var(--text-muted); text-align: center;">No items registered.</div>';
+        cartContainer.innerHTML = '<div style="padding: 20px 0; color: var(--text-muted); text-align: center;">Your cart is empty.</div>';
         cartSummaryContainer.innerHTML = '';
-        rzpButton.style.display = 'inline-block';
-        document.getElementById('print-button').style.display = 'inline-block';
-        
-        rzpButton.onclick = function (e) {
-          e.preventDefault();
-          showToast("Cart is empty! Add products to proceed.");
-        };
+        cartDivider.style.display = 'none';
       } else {
-        rzpButton.style.display = 'inline-block';
-        document.getElementById('print-button').style.display = 'inline-block';
         cartContainer.innerHTML = ''; // clear existing
 
         currentCart.forEach(item => {
@@ -149,61 +147,46 @@
           subTotal += itemTotal;
 
           cartContainer.innerHTML += `
-            <div class="invoice-row">
+            <div class="billing-row">
               <div>
-                <strong style="color: var(--text-primary);">${item.name}</strong>
+                <div style="color: var(--text-primary); font-weight: 500;">${item.name}</div>
+                <div class="cart-controls" style="display:inline-flex; width: 160px; margin-top: 8px;" data-product="${item.name}" data-price="${item.price}"></div>
               </div>
-              <div class="invoice-col-right">
-                <div class="cart-controls" style="display:inline-flex; width: 120px;" data-product="${item.name}" data-price="${item.price}"></div>
+              <div style="text-align: right;">
+                <div style="color: var(--text-primary); font-weight: 700;">₹${itemTotal.toFixed(2)}</div>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">₹${Number(item.price).toFixed(2)} / ea</div>
               </div>
-              <div class="invoice-col-right">₹${Number(item.price).toFixed(2)}</div>
-              <div class="invoice-col-right" style="color: var(--text-primary); font-weight: bold;">₹${itemTotal.toFixed(2)}</div>
             </div>
           `;
         });
 
-        let makingCharges = 0;
-        let platformFees = Math.round(subTotal * 0.02); // 2% Platform fee
-        let totalAmount = subTotal + tax + makingCharges + platformFees - discount;
+        cartDivider.style.display = 'block';
+
+        let makingCharges = 0.00;
+        tax = Math.round(subTotal * 0.18); // 18% GST
+        let totalAmount = subTotal + tax + makingCharges - discount;
 
         let breakdownHTML = `
-          <div class="invoice-summary-box">
-            <div class="invoice-summary-row">
-              <span>Subtotal</span>
+            <div class="billing-row billing-row-light">
+              <span>Item Total</span>
               <span>₹${subTotal.toFixed(2)}</span>
             </div>
-            <div class="invoice-summary-row">
+            <div class="billing-row billing-row-light">
               <span>Making Charges</span>
               <span>₹${makingCharges.toFixed(2)}</span>
             </div>
-            <div class="invoice-summary-row">
-              <span>Platform Fees (2%)</span>
-              <span>₹${platformFees.toFixed(2)}</span>
-            </div>
-            <div class="invoice-summary-row">
-              <span>Estimated Taxes (18%)</span>
+            <div class="billing-row billing-row-light">
+              <span>GST (18%)</span>
               <span>₹${tax.toFixed(2)}</span>
             </div>
-            <div class="invoice-summary-row" style="color: var(--logo-green);">
-              <span>Discounts</span>
-              <span>-₹${discount.toFixed(2)}</span>
-            </div>
-            <div class="invoice-summary-total">
-              <span>TOTAL DUE</span>
+            <hr class="dashed-divider">
+            <div class="billing-row-total">
+              <span>To Pay</span>
               <span>₹${totalAmount.toFixed(2)}</span>
             </div>
-          </div>
         `;
 
         cartSummaryContainer.innerHTML = breakdownHTML;
-
-        // Re-bind payment integration based on new total
-        rzpButton.onclick = function (e) {
-          e.preventDefault();
-
-          // Redirect to payment-unavailable page
-          window.location.href = "payment-unavailable.html";
-        };
 
         // Render the +- buttons
         renderAllCartControls();
