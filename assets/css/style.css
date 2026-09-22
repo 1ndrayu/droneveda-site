@@ -1630,9 +1630,9 @@ header.navbar.navbar-home.scrolled {
 }
 
 .slim-social-banner:hover {
-  border-color: var(--logo-green) !important;
+  border-color: #ffffff !important;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 20px rgba(5, 150, 105, 0.15);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
 }
 
@@ -1651,14 +1651,14 @@ header.navbar.navbar-home.scrolled {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--logo-green);
+  color: #ffffff;
   transition: all var(--transition-normal);
 }
 
 .slim-social-banner:hover .social-icon-wrapper {
-  background: var(--logo-green);
+  background: #ffffff;
   color: #000000;
-  border-color: var(--logo-green);
+  border-color: #ffffff;
 }
 
 .social-banner-info {
@@ -1671,7 +1671,7 @@ header.navbar.navbar-home.scrolled {
   font-family: var(--font-family);
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--logo-green);
+  color: #ffffff;
   letter-spacing: 1.5px;
 }
 
