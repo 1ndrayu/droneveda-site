@@ -238,7 +238,7 @@ a {
 
 header.navbar.navbar-home {
   background-color: #000000 !important;
-  transition: background-color 0.5s ease-in-out, padding var(--transition-normal);
+  transition: background-color 1s ease-in-out, padding var(--transition-normal);
 }
 
 header.navbar.navbar-home.scrolled {
@@ -1806,11 +1806,7 @@ header.navbar.navbar-home.scrolled {
 }
 
 .scrolling-row-left .scrolling-track {
-  animation: scrollLeft 40s linear infinite;
-}
-
-.scrolling-row-right .scrolling-track {
-  animation: scrollRight 40s linear infinite;
+  animation: scrollLeft 60s linear infinite;
 }
 
 .scrolling-track img {
@@ -1833,43 +1829,5 @@ header.navbar.navbar-home.scrolled {
 
   100% {
     transform: translateX(calc(-50% - 10px));
-  }
-}
-
-@keyframes scrollRight {
-  0% {
-    transform: translateX(calc(-50% - 10px));
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-/* --- MULTIMEDIA SMOOTH LOADING --- */
-img:not(.hero-video),
-video:not(.hero-video) {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-img.media-loaded,
-video.media-loaded {
-  opacity: 1;
-}
-
-/* 3 sec delayed smooth fade in for homepage background image */
-.hero-video {
-  opacity: 0;
-  animation: heroFadeIn 1.5s ease-in-out 1.5s forwards;
-}
-
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }
