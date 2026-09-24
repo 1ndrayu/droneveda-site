@@ -1818,7 +1818,7 @@ header.navbar.navbar-home.scrolled {
   width: 320px;
   border-radius: 12px;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, opacity 1s ease-in-out;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -1861,7 +1861,7 @@ video.media-loaded {
 /* 3 sec delayed smooth fade in for homepage background image */
 .hero-video {
   opacity: 0;
-  animation: heroFadeIn 2.5s ease-in-out 0.5s forwards;
+  animation: heroFadeIn 1.5s ease-in-out 1.5s forwards;
 }
 
 @keyframes heroFadeIn {
