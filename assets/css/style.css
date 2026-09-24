@@ -238,7 +238,7 @@ a {
 
 header.navbar.navbar-home {
   background-color: #000000 !important;
-  transition: background-color 0.8s ease-in-out, padding var(--transition-normal);
+  transition: background-color 0.5s ease-in-out, padding var(--transition-normal);
 }
 
 header.navbar.navbar-home.scrolled {
@@ -1292,7 +1292,8 @@ header.navbar.navbar-home.scrolled {
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.5;
-  margin-bottom: 120px; /* Space for sticky bar */
+  margin-bottom: 120px;
+  /* Space for sticky bar */
 }
 
 .note-card strong {
@@ -1342,7 +1343,8 @@ header.navbar.navbar-home.scrolled {
 .pay-method-icon svg {
   width: 24px;
   height: 24px;
-  color: #002970; /* approx blue */
+  color: #002970;
+  /* approx blue */
 }
 
 .pay-method-text {
@@ -1362,7 +1364,8 @@ header.navbar.navbar-home.scrolled {
 }
 
 .btn-pay {
-  background: #0066FF !important; /* Slide to pay blue */
+  background: #0066FF !important;
+  /* Slide to pay blue */
   color: #fff !important;
   border: none !important;
   border-radius: 30px !important;
@@ -1385,6 +1388,7 @@ header.navbar.navbar-home.scrolled {
   .sticky-pay-bar {
     padding: 15px 16px;
   }
+
   .btn-pay {
     min-width: 150px;
     padding: 12px 20px !important;
@@ -1720,26 +1724,34 @@ header.navbar.navbar-home.scrolled {
 }
 
 @media print {
-  body, html {
+
+  body,
+  html {
     background-color: #fff !important;
     color: #000 !important;
   }
-  
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     color: #000 !important;
     text-shadow: none !important;
   }
-  
-  .navbar, .modern-footer, .noise-overlay, button, .page-navigation {
+
+  .navbar,
+  .modern-footer,
+  .noise-overlay,
+  button,
+  .page-navigation {
     display: none !important;
   }
-  
+
   .billing-card {
     border: 1px solid #000 !important;
     box-shadow: none !important;
     background: transparent !important;
   }
-  
+
   .dashed-divider {
     border-color: #000 !important;
   }
@@ -1751,6 +1763,7 @@ header.navbar.navbar-home.scrolled {
   border-color: var(--text-primary) !important;
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s, background-color 0.2s, color 0.2s, border-color 0.2s !important;
 }
+
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.02) !important;
   box-shadow: 0 6px 15px rgba(5, 150, 105, 0.3) !important;
@@ -1758,10 +1771,77 @@ header.navbar.navbar-home.scrolled {
   border-color: var(--logo-green) !important;
   color: #fff !important;
 }
+
 .btn-primary:active {
   transform: translateY(1px) scale(0.98) !important;
   box-shadow: none !important;
   background-color: var(--accent-hover) !important;
   border-color: var(--accent-hover) !important;
   color: #fff !important;
+}
+
+/* Endless Scrolling Gallery */
+.scrolling-gallery {
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.scrolling-row {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.scrolling-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+.scrolling-row-left .scrolling-track {
+  animation: scrollLeft 40s linear infinite;
+}
+
+.scrolling-row-right .scrolling-track {
+  animation: scrollRight 40s linear infinite;
+}
+
+.scrolling-track img {
+  height: 220px;
+  width: 320px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.scrolling-track img:hover {
+  transform: scale(1.03);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(calc(-50% - 10px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
