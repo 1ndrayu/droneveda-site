@@ -135,4 +135,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Multimedia Smooth Loading
+  const mediaElements = document.querySelectorAll('img, video');
+  
+  mediaElements.forEach(media => {
+    // Exclude hero-video to let its dedicated CSS 3s delay animation handle it
+    if(media.classList.contains('hero-video')) return;
+    
+    if (media.complete || media.readyState >= 3) {
+      media.classList.add('media-loaded');
+    } else {
+      media.addEventListener('load', () => {
+        media.classList.add('media-loaded');
+      });
+      // Fallback for errors so they don't stay hidden forever
+      media.addEventListener('error', () => {
+        media.classList.add('media-loaded'); 
+      });
+      if (media.tagName === 'VIDEO') {
+        media.addEventListener('loadeddata', () => {
+          media.classList.add('media-loaded');
+        });
+      }
+    }
+  });
+
 });
