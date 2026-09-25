@@ -11,6 +11,11 @@ function updateCartBadge() {
         cartCountElement.innerText = totalItems;
     }
     
+    const navCartBtn = document.getElementById('nav-cart-btn');
+    if (navCartBtn) {
+        navCartBtn.style.display = totalItems > 0 ? 'flex' : 'none';
+    }
+    
     updateFloatingCart(totalItems);
 }
 

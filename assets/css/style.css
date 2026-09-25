@@ -238,7 +238,7 @@ a {
 
 header.navbar.navbar-home {
   background-color: #000000 !important;
-  transition: background-color 1s ease-in-out, padding var(--transition-normal);
+  transition: background-color 0.6s, padding var(--transition-normal);
 }
 
 header.navbar.navbar-home.scrolled {
