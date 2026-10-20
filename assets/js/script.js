@@ -135,11 +135,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Hero image loading handler
+  const heroMedia = document.querySelector('.hero-video');
+  if (heroMedia) {
+    if (heroMedia.complete && heroMedia.naturalWidth > 0) {
+      heroMedia.classList.add('hero-loaded');
+    } else {
+      heroMedia.addEventListener('load', () => heroMedia.classList.add('hero-loaded'), { once: true });
+      heroMedia.addEventListener('error', () => heroMedia.classList.add('hero-loaded'), { once: true });
+    }
+  }
+
   // Multimedia Smooth Loading
   const mediaElements = document.querySelectorAll('img, video');
   
   mediaElements.forEach(media => {
-    // Exclude hero-video to let its dedicated CSS 3s delay animation handle it
+    // Exclude hero-video as it has its own dedicated black-screen to hero-loaded transition
     if(media.classList.contains('hero-video')) return;
     
     if (media.complete || media.readyState >= 3) {

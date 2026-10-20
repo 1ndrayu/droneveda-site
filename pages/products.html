@@ -13,7 +13,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=5">
 </head>
 
 <body>
@@ -80,70 +80,40 @@
 
           <div class="grid-4 reveal-group" style="margin-bottom: 120px;">
             <div class="reveal-item">
-              <div class="tier-card reveal glass-card"
-                style="padding: 0; overflow: hidden; height: 680px; position: relative; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                <img src="../assets/img/drone1.jpeg"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;"
-                  alt="Agricultural Drones">
-                <div
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.95) 100%); z-index: 1;">
-                </div>
+              <div class="tier-card product-card reveal glass-card">
+                <img src="../assets/img/drone1.jpeg" class="product-card-bg" alt="Agricultural Drones">
+                <div class="product-card-overlay"></div>
 
-                <div
-                  style="padding: 30px; display: flex; flex-direction: column; position: relative; z-index: 2; height: 100%;">
-                  <div class="tier-header" style="flex-grow: 1; display: flex; flex-direction: column;">
-                    <span class="tier-name"
-                      style="font-family: var(--font-mono); color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">AGRI
-                      ASTRA V1</span>
-                    <h3 class="tier-title"
-                      style="font-family: var(--font-family); font-size: 2.2rem; color: #fff; margin-top: 8px; line-height: 1.1; font-weight: 800; min-height: 2.2em;">
-                      Agricultural Drones</h3>
-
-                    <p class="tier-audience"
-                      style="color: #fff; font-size: 0.85rem; margin-top: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-                      Semi Autonomous Drones</p>
-
-                    <p class="tier-desc"
-                      style="color: rgba(255,255,255,0.8); margin-top: 16px; font-size: 0.9rem; line-height: 1.5; max-width: 95%; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.5em;">
-                      Heavy-lift drones for precision crop spraying, multispectral imaging and field
-                      monitoring.</p>
-
-                    <div style="margin-top: auto; padding-bottom: 20px;">
-                      <div
-                        style="font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-                        Starting From</div>
-                      <div
-                        style="font-size: 2rem; font-weight: bold; color: #fff; font-family: var(--font-mono); line-height: 1;">
-                        INR <span class="odometer" data-target="300000">0</span></div>
-                    </div>
+                <div class="product-card-body">
+                  <div class="product-card-info">
+                    <span class="tier-name">AGRI ASTRA V1</span>
+                    <h3 class="tier-title">Agricultural Drones</h3>
+                    <p class="tier-audience">Semi Autonomous Drones</p>
+                    <p class="tier-desc">Heavy-lift drones for precision crop spraying, multispectral imaging and field monitoring.</p>
                   </div>
 
-                  <div
-                    style="background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 20px;">
-                    <ul class="tier-features"
-                      style="display: flex; flex-direction: column; gap: 10px; margin: 0 0 20px 0; padding: 0; list-style: none; color: #fff; font-size: 0.75rem; font-weight: 500; border-top: none;">
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">10L Tank Capacity</span></li>
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">20mins Flight time, covering 1.5 acres of
-                          farmland</span></li>
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">Custom flight operations with RTH functionality</span>
+                  <div class="product-card-pricing">
+                    <div class="price-label">Starting From</div>
+                    <div class="price-value">INR <span class="odometer" data-target="300000">0</span></div>
+                  </div>
+
+                  <div class="product-card-specs">
+                    <ul class="tier-features">
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>10L Tank Capacity</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>20mins Flight time, covering 1.5 acres of farmland</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>Custom flight operations with RTH functionality</span>
                       </li>
                     </ul>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                      <a href="/?product=AGRI%20ASTRA%20V1#contact" class="btn"
-                        style="width: 100%; text-align: center; display: block;">INQUIRE</a>
-                      <div style="height: 54px; width: 100%;"></div>
+                    <div class="product-card-actions">
+                      <a href="/?product=AGRI%20ASTRA%20V1#contact" class="btn">INQUIRE</a>
                     </div>
                   </div>
                 </div>
@@ -151,67 +121,40 @@
             </div>
 
             <div class="reveal-item">
-              <div class="tier-card reveal glass-card"
-                style="padding: 0; overflow: hidden; height: 680px; position: relative; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                <img src="../assets/img/drone2.png"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;"
-                  alt="Surveillance Drone">
-                <div
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.95) 100%); z-index: 1;">
-                </div>
+              <div class="tier-card product-card reveal glass-card">
+                <img src="../assets/img/drone2.png" class="product-card-bg" alt="Surveillance Drone">
+                <div class="product-card-overlay"></div>
 
-                <div
-                  style="padding: 30px; display: flex; flex-direction: column; position: relative; z-index: 2; height: 100%;">
-                  <div class="tier-header" style="flex-grow: 1; display: flex; flex-direction: column;">
-                    <span class="tier-name"
-                      style="font-family: var(--font-mono); color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">TRINETRA
-                      X1</span>
-                    <h3 class="tier-title"
-                      style="font-family: var(--font-family); font-size: 2.2rem; color: #fff; margin-top: 8px; line-height: 1.1; font-weight: 800; min-height: 2.2em;">
-                      Surveillance Drone</h3>
-
-                    <p class="tier-audience"
-                      style="color: #fff; font-size: 0.85rem; margin-top: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-                      Reconnaissance Drones</p>
-
-                    <p class="tier-desc"
-                      style="color: rgba(255,255,255,0.8); margin-top: 16px; font-size: 0.9rem; line-height: 1.5; max-width: 95%; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.5em;">
-                      Equipped drones for site mapping, infrastructure inspection, and reconnaissance operations.</p>
-
-                    <div style="margin-top: auto; padding-bottom: 20px;">
-                      <div
-                        style="font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-                        Starting From</div>
-                      <div
-                        style="font-size: 2rem; font-weight: bold; color: #fff; font-family: var(--font-mono); line-height: 1;">
-                        INR <span class="odometer" data-target="150000">0</span></div>
-                    </div>
+                <div class="product-card-body">
+                  <div class="product-card-info">
+                    <span class="tier-name">TRINETRA X1</span>
+                    <h3 class="tier-title">Surveillance Drone</h3>
+                    <p class="tier-audience">Reconnaissance Drones</p>
+                    <p class="tier-desc">Equipped drones for site mapping, infrastructure inspection, and reconnaissance operations.</p>
                   </div>
 
-                  <div
-                    style="background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 20px;">
-                    <ul class="tier-features"
-                      style="display: flex; flex-direction: column; gap: 10px; margin: 0 0 20px 0; padding: 0; list-style: none; color: #fff; font-size: 0.75rem; font-weight: 500; border-top: none;">
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">LiDAR & thermal imaging payloads</span></li>
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">Point-cloud mapping & 3D reconstruction</span></li>
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">Redundant failsafe systems</span></li>
+                  <div class="product-card-pricing">
+                    <div class="price-label">Starting From</div>
+                    <div class="price-value">INR <span class="odometer" data-target="150000">0</span></div>
+                  </div>
+
+                  <div class="product-card-specs">
+                    <ul class="tier-features">
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>LiDAR &amp; thermal imaging payloads</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>Point-cloud mapping &amp; 3D reconstruction</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>Redundant failsafe systems</span>
+                      </li>
                     </ul>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                      <a href="/?product=TRINETRA%20X1#contact" class="btn"
-                        style="width: 100%; text-align: center; display: block;">INQUIRE</a>
-                      <div style="height: 54px; width: 100%;"></div>
+                    <div class="product-card-actions">
+                      <a href="/?product=TRINETRA%20X1#contact" class="btn">INQUIRE</a>
                     </div>
                   </div>
                 </div>
@@ -219,68 +162,41 @@
             </div>
 
             <div class="reveal-item">
-              <div class="tier-card reveal glass-card"
-                style="padding: 0; overflow: hidden; height: 680px; position: relative; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                <img src="../assets/img/quad_sm.png"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; background: #222;"
-                  alt="Quad-copter Kit" onerror="this.onerror=null; this.src='../assets/img/logo-footer.png';">
-                <div
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.95) 100%); z-index: 1;">
-                </div>
+              <div class="tier-card product-card reveal glass-card">
+                <img src="../assets/img/quad_sm.png" class="product-card-bg" alt="Quad-copter Kit" onerror="this.onerror=null; this.src='../assets/img/logo-footer.png';">
+                <div class="product-card-overlay"></div>
 
-                <div
-                  style="padding: 30px; display: flex; flex-direction: column; position: relative; z-index: 2; height: 100%;">
-                  <div class="tier-header" style="flex-grow: 1; display: flex; flex-direction: column;">
-                    <span class="tier-name"
-                      style="font-family: var(--font-mono); color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">4
-                      PROPELLERS</span>
-                    <h3 class="tier-title"
-                      style="font-family: var(--font-family); font-size: 2.2rem; color: #fff; margin-top: 8px; line-height: 1.1; font-weight: 800; min-height: 2.2em;">
-                      Quad-copter Training Kit</h3>
-
-                    <p class="tier-audience"
-                      style="color: #fff; font-size: 0.85rem; margin-top: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-                      Training Frame Kit</p>
-
-                    <p class="tier-desc"
-                      style="color: rgba(255,255,255,0.8); margin-top: 16px; font-size: 0.9rem; line-height: 1.5; max-width: 95%; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.5em;">
-                      Fully equipped quad-copter frame kits for training flights. For educational purposes only.</p>
-
-                    <div style="margin-top: auto; padding-bottom: 20px;">
-                      <div
-                        style="font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-                        Starting From</div>
-                      <div
-                        style="font-size: 2rem; font-weight: bold; color: #fff; font-family: var(--font-mono); line-height: 1;">
-                        INR <span class="odometer" data-target="15000">0</span></div>
-                    </div>
+                <div class="product-card-body">
+                  <div class="product-card-info">
+                    <span class="tier-name">4 PROPELLERS</span>
+                    <h3 class="tier-title">Quad-copter Training Kit</h3>
+                    <p class="tier-audience">Training Frame Kit</p>
+                    <p class="tier-desc">Fully equipped quad-copter frame kits for training flights. For educational purposes only.</p>
                   </div>
 
-                  <div
-                    style="background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 20px;">
-                    <ul class="tier-features"
-                      style="display: flex; flex-direction: column; gap: 10px; margin: 0 0 20px 0; padding: 0; list-style: none; color: #fff; font-size: 0.75rem; font-weight: 500; border-top: none;">
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">Lightweight carbon-fiber frame</span></li>
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">High-performance brushless motors</span></li>
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">Quick-release propellers</span></li>
+                  <div class="product-card-pricing">
+                    <div class="price-label">Starting From</div>
+                    <div class="price-value">INR <span class="odometer" data-target="15000">0</span></div>
+                  </div>
+
+                  <div class="product-card-specs">
+                    <ul class="tier-features">
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>Lightweight carbon-fiber frame</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>High-performance brushless motors</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>Quick-release propellers</span>
+                      </li>
                     </ul>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                      <a href="/?product=Quad-copter#contact" class="btn"
-                        style="width: 100%; text-align: center; display: block;">INQUIRE</a>
-                      <div class="cart-controls" data-product="4 PROPELLERS" data-price="15000" style="width: 100%;">
-                      </div>
+                    <div class="product-card-actions">
+                      <a href="/?product=Quad-copter#contact" class="btn">INQUIRE</a>
+                      <div class="cart-controls" data-product="4 PROPELLERS" data-price="15000"></div>
                     </div>
                   </div>
                 </div>
@@ -288,68 +204,41 @@
             </div>
 
             <div class="reveal-item">
-              <div class="tier-card reveal glass-card"
-                style="padding: 0; overflow: hidden; height: 680px; position: relative; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
-                <img src="../assets/img/hexa_sm.png"
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; background: #222;"
-                  alt="Hexa-copter Kit" onerror="this.onerror=null; this.src='../assets/img/logo-footer.png';">
-                <div
-                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.95) 100%); z-index: 1;">
-                </div>
+              <div class="tier-card product-card reveal glass-card">
+                <img src="../assets/img/hexa_sm.png" class="product-card-bg" alt="Hexa-copter Kit" onerror="this.onerror=null; this.src='../assets/img/logo-footer.png';">
+                <div class="product-card-overlay"></div>
 
-                <div
-                  style="padding: 30px; display: flex; flex-direction: column; position: relative; z-index: 2; height: 100%;">
-                  <div class="tier-header" style="flex-grow: 1; display: flex; flex-direction: column;">
-                    <span class="tier-name"
-                      style="font-family: var(--font-mono); color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">6
-                      PROPELLERS</span>
-                    <h3 class="tier-title"
-                      style="font-family: var(--font-family); font-size: 2.2rem; color: #fff; margin-top: 8px; line-height: 1.1; font-weight: 800; min-height: 2.2em;">
-                      Hexa-copter Training Kit</h3>
-
-                    <p class="tier-audience"
-                      style="color: #fff; font-size: 0.85rem; margin-top: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-                      Training Frame Kit</p>
-
-                    <p class="tier-desc"
-                      style="color: rgba(255,255,255,0.8); margin-top: 16px; font-size: 0.9rem; line-height: 1.5; max-width: 95%; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; min-height: 4.5em;">
-                      Fully equipped hexa-copter frame kits for training flights. For educational purposes only.</p>
-
-                    <div style="margin-top: auto; padding-bottom: 20px;">
-                      <div
-                        style="font-size: 0.8rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
-                        Starting From</div>
-                      <div
-                        style="font-size: 2rem; font-weight: bold; color: #fff; font-family: var(--font-mono); line-height: 1;">
-                        INR <span class="odometer" data-target="25000">0</span></div>
-                    </div>
+                <div class="product-card-body">
+                  <div class="product-card-info">
+                    <span class="tier-name">6 PROPELLERS</span>
+                    <h3 class="tier-title">Hexa-copter Training Kit</h3>
+                    <p class="tier-audience">Training Frame Kit</p>
+                    <p class="tier-desc">Fully equipped hexa-copter frame kits for training flights. For educational purposes only.</p>
                   </div>
 
-                  <div
-                    style="background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 20px;">
-                    <ul class="tier-features"
-                      style="display: flex; flex-direction: column; gap: 10px; margin: 0 0 20px 0; padding: 0; list-style: none; color: #fff; font-size: 0.75rem; font-weight: 500; border-top: none;">
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">6-rotor redundancy for failsafe flights</span></li>
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">High-torque motors</span></li>
-                      <li style="display: flex; align-items: flex-start; gap: 8px;"><svg width="14" height="14"
-                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;">
-                          <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg> <span style="line-height: 1.4;">Extended payload capacity</span></li>
+                  <div class="product-card-pricing">
+                    <div class="price-label">Starting From</div>
+                    <div class="price-value">INR <span class="odometer" data-target="25000">0</span></div>
+                  </div>
+
+                  <div class="product-card-specs">
+                    <ul class="tier-features">
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>6-rotor redundancy for failsafe flights</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>High-torque motors</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--logo-green); margin-top: 2px; flex-shrink: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        <span>Extended payload capacity</span>
+                      </li>
                     </ul>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
-                      <a href="/?product=Hexa-copter#contact" class="btn"
-                        style="width: 100%; text-align: center; display: block;">INQUIRE</a>
-                      <div class="cart-controls" data-product="6 PROPELLERS" data-price="25000" style="width: 100%;">
-                      </div>
+                    <div class="product-card-actions">
+                      <a href="/?product=Hexa-copter#contact" class="btn">INQUIRE</a>
+                      <div class="cart-controls" data-product="6 PROPELLERS" data-price="25000"></div>
                     </div>
                   </div>
                 </div>

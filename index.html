@@ -12,7 +12,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="preload" as="image" href="assets/img/nebuluxe-Image 12.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
   <link rel="icon" type="image/png" href="assets/img/logo - Copy.png">
 </head>
 
@@ -74,10 +75,30 @@
           AEROSPACE</div>
 
         <div class="hero-video-container">
-          <img src="assets/img/nebuluxe-Image 12.png" class="hero-video" alt="Drone Veda Hero Image"
-            style="object-fit: cover; width: 100%; height: 100%;">
+          <picture>
+            <source srcset="assets/img/nebuluxe-Image 12.webp" type="image/webp">
+            <img src="assets/img/nebuluxe-Image 12.png" class="hero-video" alt="Drone Veda Hero Image"
+              fetchpriority="high" decoding="async"
+              style="object-fit: cover; width: 100%; height: 100%;">
+          </picture>
           <div class="hero-overlay"></div>
         </div>
+        <script>
+          (function() {
+            var heroImg = document.querySelector('.hero-video');
+            if (heroImg) {
+              function onHeroReady() {
+                heroImg.classList.add('hero-loaded');
+              }
+              if (heroImg.complete && heroImg.naturalWidth > 0) {
+                onHeroReady();
+              } else {
+                heroImg.addEventListener('load', onHeroReady, { once: true });
+                heroImg.addEventListener('error', onHeroReady, { once: true });
+              }
+            }
+          })();
+        </script>
 
         <div class="hero-content container reveal"
           style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; transform: translateY(-100px);">
